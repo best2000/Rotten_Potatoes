@@ -1,8 +1,8 @@
 # README
 
--3 party user signin \n 
--movies reviews from users
--add movies from TMDb api
+-3 party user signin <br>
+-movies reviews from users <br/>
+-add movies from TMDb api <br/>
 -ajax javascript movies filter 
 -deploy on cloud
 -database validation ซ้ำ ไม่ครบ 
