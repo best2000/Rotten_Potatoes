@@ -1,6 +1,6 @@
 # README
 
--3 party user signin 
+-3 party user signin \n 
 -movies reviews from users
 -add movies from TMDb api
 -ajax javascript movies filter 
