@@ -1,12 +1,12 @@
 # README
 
--3 party user signin <br>
--movies reviews from users <br/>
--add movies from TMDb api <br/>
--ajax javascript movies filter 
--deploy on cloud
--database validation ซ้ำ ไม่ครบ 
--database datetime store
+-3 party user signin \
+-movies reviews from users \
+-add movies from TMDb api \
+-ajax javascript movies filter \
+-deploy on cloud \
+-database validation ซ้ำ ไม่ครบ \
+-database datetime store <br>
 -Project 4.1, Project 4.2, Project 4.3 ข้อ 1 และ 3,
 Project 4.4, Project 4.5, Project 4.6, Project 4.7,Project 6.6 
  
