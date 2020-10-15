@@ -1,0 +1,12 @@
+<% @movie.reviews.each do |re| %>
+  <div>
+    User: <%= User.find(re.user_id).name %><br>
+    Review score: <%= re.score %><br>
+    Descriptions: <%= re.des %>
+  <% if re.user_id == current_user.id %>
+    <br><a class="btn_link" href="<%=edit_review_path(re)%>?mov_id=<%= @movie.id %>">Edit</a>
+    <a class="btn_link" data-method="delete" href="<%= review_path(re) %>?mov_id=<%= @movie.id %>">Delete</a>
+  <% end %>
+  </div><br>
+<% end %>
+

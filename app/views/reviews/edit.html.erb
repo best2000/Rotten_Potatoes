@@ -1,0 +1,32 @@
+<div>
+    <div>Edit Review</div>
+    <div>
+        <form accept-charset="UTF-8" action="/reviews/update/<%= @review.id %>" data-remote="true" method="post">
+            <label>Movie ID:</label>
+            <input type="text" name="mov_id" value="<%= @movie.id %>" readonly/>
+            <label>Movie:</label>
+            <input type="text" value="<%= @movie.name %>" readonly/><br>
+            <label>User:</label>
+            <input type="text" value="<%= current_user.name %>" readonly/><br>
+            <label>Score:</label>
+            <select id="re_score" name="review[score]">
+                <option value="-">-</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br>
+            <label>Descriptions:</label>
+            <textarea id="re_des" name="review[des]" rows="4" cols="50" value=""><%= @review.des %></textarea><br>
+            <% if @from == "user_index" %>
+                <a class="btn_link" href="/users/<%=current_user.id%>">Cancel</a>
+                <input type="text" name="from" value="user_index" style="display:none;"/>
+            <% else %>
+                <a class="btn_link" href=<%=movie_path(@movie)%>>Cancel</a>
+            <% end %>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>

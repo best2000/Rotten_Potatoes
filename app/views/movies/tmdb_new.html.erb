@@ -1,0 +1,28 @@
+<div>
+  <div>Add movie</div>
+  <div>
+    <form accept-charset="UTF-8" action="/movies" data-remote="true" method="post">
+      <label>Name:</label>
+      <input type="text" name="movie[name]" value="<%=@name%>"/><br>
+      <label>Rating:</label>
+      <select name="movie[rat]">
+        <option value="-">-</option>
+        <option value="G">G</option>
+        <option value="PG">PG</option>
+        <option value="PG-13">PG-13</option>
+        <option value="R">R</option>
+        <option value="NC-17">NC-17</option>
+      </select><br>
+      <label>Release:</label>
+      <input type="date" name="movie[re]" value="<%=@re%>"/><br>
+      <label>Genre:</label>
+      <input type="text" name="movie[gen]" value="<%=@gen%>"/><br>
+      <label>Length:</label>
+      <input type="text" name="movie[len]" value="<%=@len%>"/><br>
+      <label>Descriptions:</label>
+      <textarea id="des" name="movie[des]" rows="4" cols="50"><%=@des%></textarea><br>
+      <a class="btn_link" href=<%=root_path%>>Cancel</a>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>

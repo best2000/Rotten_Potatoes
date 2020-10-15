@@ -1,0 +1,24 @@
+<div>
+    <div>User Info</div>
+    <div>ID: <%= @user.id %><br>
+        Provider: <%= @user.provider %><br>
+        Name: <%= @user.name %>
+    </div>
+    <div>My Reviews</div>
+        <% if @reviews.length == 0 %>
+            <div>None</div>
+        <% else %>
+            <% @reviews.each do |re| %>
+                <% movie = Movie.find(re.movie_id) %>
+                <div>
+                    Movie: <a class="mov_link" href="<%= movie_path(movie) %>"><%= movie.name %></a>
+                    Movie ID: <%= re.movie_id %><br>
+                    User: <%= User.find(re.user_id).name %><br>
+                    Review score: <%= re.score %><br>
+                    Descriptions: <%= re.des %>
+                    <br><a class="btn_link" href="<%=edit_review_path(re)%>?mov_id=<%= movie.id%>&from=user_index">Edit</a>
+                    <a class="btn_link" data-method="delete" href="<%= review_path(re) %>?mov_id=<%= movie.id %>&from=user_index">Delete</a>
+                </div><br>
+            <% end %>
+        <% end %>
+</div>

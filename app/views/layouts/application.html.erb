@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Rotten Potatoes</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+   </head>
+
+   <body>
+      <div id="notice" class="notice"><%= notice %></div>
+      <div id="alert" class="alert"><%= alert %></div>
+      <div id="header">
+         <a class="header_link" href="/movies">Rotten Potatoes</a>
+      </div>
+      <div id="nav_bar">
+         <div id="menu_nav">
+            <a class="nav_link" href="/movies/new">Add movie manually</a>
+            <div id="tmdb_div">
+               <form action="/movies/tmdb_search" data-remote="false" method="get">
+                  <label>Add from TMDb:</label>
+                  <input type="text" name="key">
+                  <input id="tmdb_btn" type="submit" value="TMDb Search">
+               </form>
+            </div>
+         </div>
+         <div id="user_nav">
+            <% if current_user %>
+               <a class="nav_link" href="/users/<%= current_user.id %>"><%= current_user.name %></a>
+               <a class="nav_link" href="<%= logout_path %>">Logout</a>
+            <% else %>
+               <a class="nav_link" href="auth/twitter">Login with Twitter</a>
+               <a class="nav_link" href="auth/github">Login with Github</a>
+            <% end %>
+         </div>
+      </div>
+      <div id="content">
+         <div id="contain">
+            <%= yield -%>
+         </div>
+      </div>
+   </body>
+</html>

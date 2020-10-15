@@ -1,0 +1,55 @@
+<div>
+Click on specific movie to <button class="hint_btn" onclick="hint()">Edit</button> or <button class="hint_btn" onclick="hint()">Delete</button></h3>
+</div>
+<div>
+    <div style="border-bottom: 0px;">Filter</div>
+    <form action="/movies/partialGet" data-remote="true" method="get">
+      <div id="flex_row">
+        <div class="filter_form" style="width: 15%;">
+          <div class="filter_top_label">Rating</div>
+          <input type="checkbox" name="rat[]" value="-" onclick="filter()" checked>
+          <label>-</label><br>
+          <input type="checkbox" name="rat[]" value="G" onclick="filter()" checked>
+          <label>G</label><br>
+          <input type="checkbox" name="rat[]" value="PG" onclick="filter()" checked>
+          <label>PG</label><br>
+          <input type="checkbox" name="rat[]" value="PG-13" onclick="filter()" checked>
+          <label>PG-13</label><br>
+          <input type="checkbox" name="rat[]" value="R" onclick="filter()" checked>
+          <label>R</label><br>
+          <input type="checkbox" name="rat[]" value="NC-17" onclick="filter()" checked>
+          <label>NC-17</label><br>
+          <input id="subbtn" type="submit" value="Filter" style="display:none">
+        </div>
+        <div class="filter_form" style="width: 85%; border-right: 0px;">
+          <div class="filter_top_label">Release Date</div>
+          <input type="date" name="re1"/>
+          <label>to</label><input type="date" name="re2"/>
+        </div>
+      </div>
+      </form>
+
+</div>
+
+<div id="mov_table"> 
+<%= render "movies/partial/mov_table" %>
+</div>
+
+<script>
+  function hint() {
+    document.getElementById('alert').innerHTML="Click on Specific movie from table below to edit or delete!";
+    setTimeout(disappear_delay, 3000, "alert");
+  }
+  function filter() {
+    document.getElementById('subbtn').click();
+  }
+  function disappear_delay(e) {
+    document.getElementById(e).innerHTML="";
+  }
+  if (document.getElementById('alert').value != "") {
+      setTimeout(disappear_delay, 3000, "alert");
+  }
+  if (document.getElementById('notice').value != "") {
+      setTimeout(disappear_delay, 3000, "notice");
+  }
+</script>

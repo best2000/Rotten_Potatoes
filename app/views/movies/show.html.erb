@@ -1,0 +1,68 @@
+<div>
+  <a class="btn_link" href=<%=root_path%>>Back</a>
+  <a class="btn_link" href=<%=edit_movie_path(@movie)%>>Edit</a>
+  <a class="btn_link" data-method="delete" href="<%= movie_path(@movie) %>">Delete</a>
+  <table>
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>RATING</th> 
+        <th>RELEASE</th>
+        <th>GENRE</th> 
+        <th>LENGTH</th> 
+      </tr>
+      <tr>
+        <td><%= @movie.id %></td>
+        <td><%= @movie.name %></td>
+        <td><%= @movie.rat %></td>
+        <td><%= @movie.re %></td>
+        <td><%= @movie.gen %></td>
+        <td><%= @movie.len %></td>
+      </tr>
+  </table>
+  <p>Descriptions: <%= @movie.des %></p>
+</div>
+
+<div>
+  <div>Add Review</div>
+  <div>
+    <form accept-charset="UTF-8" action="/reviews" data-remote="true" method="post">
+      <input type="text" name="review[mov_id]" value="<%= @movie.id %>" style="display:none;"/><br>
+      <label>User:</label>
+      <% if current_user %>
+        <input type="text" value="<%= current_user.name %>" readonly/><br>
+      <% else %>
+        <input type="text" value="-" readonly/><br>
+      <% end %>
+      <label>Score:</label>
+      <select id="re_score" name="review[score]">
+        <option value="-">-</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select><br>
+      <label>Descriptions:</label>
+      <textarea id="re_des" name="review[des]" rows="4" cols="50" value=""></textarea><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>
+
+<div id="review_box">
+  <%= render "reviews/partial/re_box" %>
+</div>
+
+<script>
+  function disappear_delay(e) {
+    document.getElementById(e).innerHTML="";
+  }
+  if (document.getElementById('alert').value != "") {
+      setTimeout(disappear_delay, 3000, "alert");
+  }
+  if (document.getElementById('notice').value != "") {
+      setTimeout(disappear_delay, 3000, "notice");
+  }
+</script>

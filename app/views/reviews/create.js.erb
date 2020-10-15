@@ -1,0 +1,16 @@
+console.log('Hello from reviews/create.js.erb')
+if (<%= @ok %> == 0) {
+    document.getElementById('alert').innerHTML="Something wrong! Review score is missing.";
+    setTimeout(disappear_delay, 3000, "alert")
+} else {
+    document.getElementById('re_score').value = "-";
+    document.getElementById('re_des').value = "";
+    document.getElementById("review_box").innerHTML = "<%= j render "reviews/partial/re_box" %>";
+    document.getElementById('notice').innerHTML="Review saved.";
+    setTimeout(disappear_delay, 3000, "notice")
+}
+
+function disappear_delay(e) {
+    document.getElementById(e).innerHTML="";
+  }
+  

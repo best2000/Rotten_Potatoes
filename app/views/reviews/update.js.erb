@@ -1,0 +1,8 @@
+console.log('Hello from movies/create.js.erb');
+document.getElementById('alert').innerHTML="Something wrong! Maybe some information is missing.";
+setTimeout(disappear_delay, 3000, "alert")
+
+function disappear_delay(e) {
+    document.getElementById(e).innerHTML="";
+  }
+  

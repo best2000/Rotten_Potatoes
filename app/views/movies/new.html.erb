@@ -1,0 +1,37 @@
+<div>
+  <div>Add New Movie</div>
+  <div>
+    <form accept-charset="UTF-8" action="/movies" data-remote="true" method="post">
+      <label>Name:</label>
+      <input type="text" name="movie[name]"/><br>
+      <label>Rating:</label>
+      <select name="movie[rat]">
+        <option value="-">-</option>
+        <option value="G">G</option>
+        <option value="PG">PG</option>
+        <option value="PG-13">PG-13</option>
+        <option value="R">R</option>
+        <option value="NC-17">NC-17</option>
+      </select><br>
+      <label>Release date:</label>
+      <input type="date" name="movie[re]"/><br>
+      <label>Genre:</label>
+      <input type="text" name="movie[gen]"/><br>
+      <label>Length:</label>
+      <input type="text" name="movie[len]"/><br>
+      <label>Descriptions:</label>
+      <textarea name="movie[des]" rows="4" cols="50"></textarea><br>
+      <a class="btn_link" href=<%=root_path%>>Cancel</a>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>
+
+<script>
+  function disappear_delay(e) {
+    document.getElementById(e).innerHTML="";
+  }
+  if (document.getElementById('alert').value != "") {
+      setTimeout(disappear_delay, 3000, "alert");
+  }
+</script>
