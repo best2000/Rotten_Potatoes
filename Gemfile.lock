@@ -145,6 +145,9 @@ GEM
     omniauth-twitter (1.4.0)
       omniauth-oauth (~> 1.1)
       rack
+    pg (1.2.3)
+    pg (1.2.3-x64-mingw32)
+    pg (1.2.3-x86-mingw32)
     puma (4.3.5)
       nio4r (~> 2.0)
     puma (4.3.5-java)
@@ -207,7 +210,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     themoviedb (1.0.1)
       httparty
     thor (1.0.1)
@@ -251,12 +253,12 @@ DEPENDENCIES
   listen (~> 3.2)
   omniauth-github!
   omniauth-twitter
+  pg
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
   sass-rails (>= 6)
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4)
   themoviedb
   turbolinks (~> 5)
   tzinfo-data
