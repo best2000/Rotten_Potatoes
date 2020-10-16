@@ -1,12 +1,12 @@
 <div>
-Click on specific movie to <button class="hint_btn" onclick="hint()">Edit</button> or <button class="hint_btn" onclick="hint()">Delete</button></h3>
+  <b>Click on specific movie to <button class="hint_btn" onclick="hint()">Edit</button> or <button class="hint_btn" onclick="hint()">Delete</button></b>
 </div>
 <div>
-    <div style="border-bottom: 0px;">Filter</div>
+    <div style="border-bottom: 0px;"><b>Filter</b></div>
     <form action="/movies/partialGet" data-remote="true" method="get">
       <div id="flex_row">
         <div class="filter_form" style="width: 15%;">
-          <div class="filter_top_label">Rating</div>
+          <div class="filter_top_label"><b>Rating</b></div>
           <input type="checkbox" name="rat[]" value="-" onclick="filter()" checked>
           <label>-</label><br>
           <input type="checkbox" name="rat[]" value="G" onclick="filter()" checked>
@@ -19,12 +19,12 @@ Click on specific movie to <button class="hint_btn" onclick="hint()">Edit</butto
           <label>R</label><br>
           <input type="checkbox" name="rat[]" value="NC-17" onclick="filter()" checked>
           <label>NC-17</label><br>
-          <input id="subbtn" type="submit" value="Filter" style="display:none">
         </div>
         <div class="filter_form" style="width: 85%; border-right: 0px;">
-          <div class="filter_top_label">Release Date</div>
-          <input type="date" name="re1"/>
-          <label>to</label><input type="date" name="re2"/>
+          <div class="filter_top_label"><b>Release Date</b></div>
+          <input type="date" name="re[1]"/>
+          <label>to</label><input type="date" name="re[2]"/>
+          <input id="subbtn" type="submit" value="Filter">
         </div>
       </div>
       </form>

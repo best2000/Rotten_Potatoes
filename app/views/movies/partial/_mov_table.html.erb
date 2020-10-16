@@ -1,19 +1,19 @@
-<%= stylesheet_link_tag "mov_table" %>
 <table>
     <tr>
-      <th>ROW</th>
-      <th>NAME</th>
-      <th>RATING</th> 
-      <th>RELEASE</th>
-      <th>GENRE</th> 
-      <th>LENGTH</th> 
-      <th>ReviewCount</th>
-      <th>AvgScore</th>
+      <th>Row</th>
+      <th>Name</th>
+      <th>Rating</th> 
+      <th>Release</th>
+      <th>Genre</th> 
+      <th>Length</th> 
+      <th>Review Count</th>
+      <th>Avg Score</th>
     </tr>
     <% @movies.each_with_index do |movie, i| %>
     <tr>
       <td><%= i+1 %></td>
-      <td><%= link_to movie.name, movie_path(movie) %></td>
+      
+      <td><a class="mov_link" href="<%= movie_path(movie) %>"><%= movie.name %></a></td>
       <td><%= movie.rat %></td>
       <td><%= movie.re %></td>
       <td><%= movie.gen %></td>

@@ -1,15 +1,16 @@
 <div>
-  <a class="btn_link" href=<%=root_path%>>Back</a>
-  <a class="btn_link" href=<%=edit_movie_path(@movie)%>>Edit</a>
-  <a class="btn_link" data-method="delete" href="<%= movie_path(@movie) %>">Delete</a>
+  <div style="margin-bottom: 5px;"><b>Movie Info & Management</b></div>
+  <a class="btn_link" style="margin-bottom: 7px;" href=<%=root_path%>>Back</a>
+  <a class="btn_link" style="margin-bottom: 7px;" href=<%=edit_movie_path(@movie)%>>Edit</a>
+  <a class="btn_link" style="margin-bottom: 7px; background-color:rgb(255, 176, 148)" data-method="delete" href="<%= movie_path(@movie) %>">Delete</a>
   <table>
       <tr>
         <th>ID</th>
-        <th>NAME</th>
-        <th>RATING</th> 
-        <th>RELEASE</th>
-        <th>GENRE</th> 
-        <th>LENGTH</th> 
+        <th>Name</th>
+        <th>Rating</th> 
+        <th>Release</th>
+        <th>Genre</th> 
+        <th>Length</th> 
       </tr>
       <tr>
         <td><%= @movie.id %></td>
@@ -20,22 +21,24 @@
         <td><%= @movie.len %></td>
       </tr>
   </table>
-  <p>Descriptions: <%= @movie.des %></p>
+  <div class="des_div">
+    <b>Descriptions:</b><textarea id="mov_des" rows="7" cols="100" readonly><%= @movie.des %></textarea>
+  </div>
 </div>
 
 <div>
-  <div>Add Review</div>
+  <div><b>Add Review</b></div>
   <div>
     <form accept-charset="UTF-8" action="/reviews" data-remote="true" method="post">
       <input type="text" name="review[mov_id]" value="<%= @movie.id %>" style="display:none;"/><br>
       <label>User:</label>
       <% if current_user %>
-        <input type="text" value="<%= current_user.name %>" readonly/><br>
+        <input type="text" style="margin-bottom: 5px;" value="<%= current_user.name %>" readonly/><br>
       <% else %>
-        <input type="text" value="-" readonly/><br>
+        <input type="text" style="margin-bottom: 5px;" value="-" readonly/><br>
       <% end %>
       <label>Score:</label>
-      <select id="re_score" name="review[score]">
+      <select id="re_score"  style="margin-bottom: 5px;" name="review[score]">
         <option value="-">-</option>
         <option value="0">0</option>
         <option value="1">1</option>
@@ -44,9 +47,10 @@
         <option value="4">4</option>
         <option value="5">5</option>
       </select><br>
-      <label>Descriptions:</label>
-      <textarea id="re_des" name="review[des]" rows="4" cols="50" value=""></textarea><br>
-      <input type="submit" value="Submit">
+      <div class="des_div" style="border: 0px; padding: 0px; margin-bottom: 5px;">
+      <b>Descriptions:</b><textarea id="re_des" name="review[des]" rows="7" cols="100" value="" placeholder="What do ya think?" ></textarea>
+      </div>
+      <input type="submit" value="Submit" style="background-color:rgb(145, 255, 145)">
     </form>
   </div>
 </div>
@@ -66,3 +70,4 @@
       setTimeout(disappear_delay, 3000, "notice");
   }
 </script>
+

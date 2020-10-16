@@ -8,10 +8,12 @@ class MoviesController < ApplicationController
   end
 
   def partialGet 
-    if params[:rat] == nil
-      @movies = Movie.order("name ASC")
+    if params[:re]['1'] != "" && params[:re]['2'] != "" && params[:rat].length != 0
+      @movies = Movie.where('rat': params[:rat], 're': Date.parse(params[:re]['1'])..Date.parse(params[:re]['2'])).order("name ASC")
+    elsif params[:rat].length != 0
+      @movies = Movie.where('rat': params[:rat])
     else
-      @movies = Movie.where('rat': params[:rat]).order("name ASC")
+      @movies = Movie.where('rat': "lol")
     end
     
     respond_to do |format|

@@ -18,7 +18,8 @@
 default to all pages
 */
 html{
-   font: 400 13.3333px Arial
+   font: 400 13.3333px Arial;
+   background-color: #ffe2e2;
 }
 .alert{
    color: #ffffffea;
@@ -42,12 +43,15 @@ div {
 div#header {
    display: flex;
    justify-content: center;
+   background-color: #383e56;
 }
 div#nav_bar {
    display: flex;
    flex-flow: row nowrap;
    justify-content: space-between;
-   padding: 0px
+   padding: 0px;
+   background-color: #f69e7b;
+   
 }
 div#user_nav {
    display: flex;
@@ -59,35 +63,49 @@ div#menu_nav {
    flex-flow: row nowrap;
    padding: 0px;
    border: 0px;
-   width: 50%;
 }
 div#content {
    display: flex;
    flex-flow: row nowrap;
    justify-content: center;
    padding: 0px;
+   border: 0px;
+   background-color: #ffe2e2;
 }
 div#contain {
    padding: 0px;
    border: 0px;
+   background-color: #fff5ea;
 }
 div#tmdb_div {
-   background-color: rgb(0, 0, 0);
+   background-color: #463333;
    color: rgb(255, 255, 255);
+   border: 1px solid #777777;
 }
 
 
-table, td, th {
-   border: 1px solid black;
-}
 table {
    border-collapse: collapse;
-} 
+   width: 100%;
+   border: 1px solid rgb(0, 0, 0);
+   text-align: left;
+   background-color: #ffede6;
+ }
+ 
+ th, td {
+   padding: 8px;
+   text-align: left;
+   border: 1px solid rgb(85, 85, 85);
+   
+ }
+
+ tr:hover {background-color:#ffffff;}
+ 
 
 .hint_btn, .btn_link:link, .btn_link:visited, input[type=submit]{
    background-color: white;
    color: black;
-   border: 2px solid #000000;
+   border: 1px solid #000000;
    padding: 5px 10px;
    text-align: center;
    text-decoration: none;
@@ -97,7 +115,6 @@ table {
 .hint_btn:hover, .btn_link:hover, .btn_link:active, input[type=submit]:hover{
    background-color: #000000;
    color: rgb(255, 255, 255);
-   border-radius: 4px;
 }
 input#tmdb_btn {
    border: 2px solid #000000;
@@ -116,7 +133,7 @@ div#user_nav {
    text-decoration: none;
    display: inline-block;
    font-size: 16px;
-   background-color: #000000;
+   background-color: #463333;
    color: rgb(255, 255, 255);
 } 
 .nav_link:hover, .nav_link:active {
@@ -132,7 +149,7 @@ div#user_nav {
    text-decoration: none;
    display: inline-block;
    font-size: 70px;
-   border-radius: 4px;
+   border-radius: 20px;
 } 
 .header_link:hover, .header_link:active {
    background-color: #000000;
@@ -152,8 +169,35 @@ div.filter_top_label {
    border-right: 0px;
 }
 div.filter_form {
-   padding: 0px;
    border-top: 0px;
    border-left: 0px;
    border-bottom: 0px;
+}
+
+div.des_div{
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: flex-start;
+}
+textarea {
+   resize: none;
+}
+
+label {
+   font-weight: bold;
+}
+
+a.mov_link:link, a.mov_link:visited {
+   background-color: white;
+   color: black;
+   border: 1px solid #000000;
+   padding: 2px 5px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   border-radius: 4px;
+}
+a.mov_link:hover {
+   background-color: #000000;
+   color: rgb(255, 255, 255);
 }

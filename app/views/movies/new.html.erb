@@ -1,5 +1,5 @@
 <div>
-  <div>Add New Movie</div>
+  <div><b>Add New Movie</b></div>
   <div>
     <form accept-charset="UTF-8" action="/movies" data-remote="true" method="post">
       <label>Name:</label>
@@ -19,10 +19,12 @@
       <input type="text" name="movie[gen]"/><br>
       <label>Length:</label>
       <input type="text" name="movie[len]"/><br>
-      <label>Descriptions:</label>
-      <textarea name="movie[des]" rows="4" cols="50"></textarea><br>
-      <a class="btn_link" href=<%=root_path%>>Cancel</a>
-      <input type="submit" value="Submit">
+      <div class="des_div" style="border: 0px; padding: 0px; margin-bottom: 5px;">
+        <label>Descriptions:</label>
+        <textarea name="movie[des]" rows="7" cols="100"></textarea>
+      </div>
+      <a class="btn_link" style="background-color:rgb(255, 176, 148)" href=<%=root_path%>>Cancel</a>
+      <input type="submit" value="Submit" style="background-color:rgb(145, 255, 145)">
     </form>
   </div>
 </div>
@@ -35,3 +37,5 @@
       setTimeout(disappear_delay, 3000, "alert");
   }
 </script>
+
+<%= stylesheet_link_tag "form" %>

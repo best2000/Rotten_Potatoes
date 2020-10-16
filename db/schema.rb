@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_10_10_121908) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "movies", force: :cascade do |t|
     t.string "name"
     t.string "rat"
@@ -25,8 +28,8 @@ ActiveRecord::Schema.define(version: 2020_10_10_121908) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "movie_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "movie_id", null: false
+    t.bigint "user_id", null: false
     t.integer "score"
     t.text "des"
     t.datetime "created_at", precision: 6, null: false

@@ -1,5 +1,5 @@
 <div>
-  <div>Edit Movie</div>
+  <div><b>Edit Movie</b></div>
   <div>
     <form accept-charset="UTF-8" action="/movies/update/<%= @movie.id %>" data-remote="true" method="post">
       <label>Name:</label>
@@ -19,10 +19,14 @@
       <input type="text" name="movie[gen]" value="<%= @movie.gen %>"/><br>
       <label>Length:</label>
       <input type="text" name="movie[len]" value="<%= @movie.len %>"/><br>
-      <label>Descriptions:</label>
-      <textarea name="movie[des]" rows="4" cols="50"><%= @movie.des %></textarea><br>
-      <a class="btn_link" href=<%=movie_path(@movie)%>>Cancel</a>
-      <input type="submit" value="Submit">
+      <div class="des_div" style="border: 0px; padding: 0px; margin-bottom: 5px;">
+        <label>Descriptions:</label>
+        <textarea name="movie[des]" rows="7" cols="100"><%= @movie.des %></textarea>
+      </div>
+      <a class="btn_link" style="background-color:rgb(255, 176, 148)" href=<%=movie_path(@movie)%> >Cancel</a>
+      <input type="submit" value="Submit" style="background-color:rgb(145, 255, 145)">
     </form>
   </div>
 </div>
+
+<%= stylesheet_link_tag "form" %>

@@ -1,11 +1,11 @@
 <div class="in_flex">
-<div>SEARCH RESULT</div>
-<div>Pick One</div>
+<div><b>Search Result</b></div>
+<div><b>Pick One</b></div>
 <div>
   <form action="/movies/tmdb_new" data-remote="false" method="get">
     <% @result.each do |i| %>
     <input type="radio" id="rad" name="id" value=<%=i['id']%>>
-    <label for="rad"><%= i['original_title'].to_s+"  "+i['release_date'].to_s%></label><br>
+    <label for="rad"><%= i['original_title'].to_s+"    "+i['release_date'].to_s%></label><br>
     <% end %>
     <input type="submit" value="Next">
   </form>

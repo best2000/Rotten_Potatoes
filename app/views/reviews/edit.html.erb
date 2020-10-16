@@ -1,9 +1,9 @@
 <div>
-    <div>Edit Review</div>
+    <div><b>Edit Review</b></div>
     <div>
         <form accept-charset="UTF-8" action="/reviews/update/<%= @review.id %>" data-remote="true" method="post">
             <label>Movie ID:</label>
-            <input type="text" name="mov_id" value="<%= @movie.id %>" readonly/>
+            <input type="text" name="mov_id" value="<%= @movie.id %>" style="width: 20px;" readonly/><br>
             <label>Movie:</label>
             <input type="text" value="<%= @movie.name %>" readonly/><br>
             <label>User:</label>
@@ -18,15 +18,19 @@
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select><br>
-            <label>Descriptions:</label>
-            <textarea id="re_des" name="review[des]" rows="4" cols="50" value=""><%= @review.des %></textarea><br>
+            <div class="des_div" style="border: 0px; padding: 0px; margin-bottom: 5px;">
+                <label><b>Descriptions:</b></label>
+                <textarea id="re_des" name="review[des]" rows="4" cols="50" value=""><%= @review.des %></textarea>
+            </div>
             <% if @from == "user_index" %>
                 <a class="btn_link" href="/users/<%=current_user.id%>">Cancel</a>
-                <input type="text" name="from" value="user_index" style="display:none;"/>
+                <input type="text" name="from" value="user_index" style="display:none; background-color:rgb(255, 176, 148)" />
             <% else %>
-                <a class="btn_link" href=<%=movie_path(@movie)%>>Cancel</a>
+                <a class="btn_link" style="background-color:rgb(255, 176, 148)" href=<%=movie_path(@movie)%>>Cancel</a>
             <% end %>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" style="background-color:rgb(145, 255, 145)">
         </form>
     </div>
 </div>
+
+<%= stylesheet_link_tag "form" %>

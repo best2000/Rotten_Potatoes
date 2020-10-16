@@ -1,10 +1,10 @@
 <div>
-  <div>Add movie</div>
+  <div><b>Add movie</b></div>
   <div>
     <form accept-charset="UTF-8" action="/movies" data-remote="true" method="post">
-      <label>Name:</label>
+      <label><b>Name:</b></label>
       <input type="text" name="movie[name]" value="<%=@name%>"/><br>
-      <label>Rating:</label>
+      <label><b>Rating:</b></label>
       <select name="movie[rat]">
         <option value="-">-</option>
         <option value="G">G</option>
@@ -13,16 +13,20 @@
         <option value="R">R</option>
         <option value="NC-17">NC-17</option>
       </select><br>
-      <label>Release:</label>
+      <label><b>Release:</b></label>
       <input type="date" name="movie[re]" value="<%=@re%>"/><br>
-      <label>Genre:</label>
+      <label><b>Genre:</b></label>
       <input type="text" name="movie[gen]" value="<%=@gen%>"/><br>
-      <label>Length:</label>
+      <label><b>Length:</b></label>
       <input type="text" name="movie[len]" value="<%=@len%>"/><br>
-      <label>Descriptions:</label>
-      <textarea id="des" name="movie[des]" rows="4" cols="50"><%=@des%></textarea><br>
-      <a class="btn_link" href=<%=root_path%>>Cancel</a>
-      <input type="submit" value="Submit">
+      <div class="des_div" style="border: 0px; padding: 0px; margin-bottom: 5px;">
+        <label><b>Descriptions:</b></label>
+        <textarea id="des" name="movie[des]" rows="7" cols="100"><%=@des%></textarea><br>
+      </div>
+      <a class="btn_link" style="background-color:rgb(255, 176, 148)" href=<%=root_path%> >Cancel</a>
+      <input type="submit" value="Submit" style="margin:0px; background-color:rgb(145, 255, 145);"/>
     </form>
   </div>
 </div>
+
+<%= stylesheet_link_tag "form" %>
