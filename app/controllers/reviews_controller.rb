@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
         @movie = Movie.find(params[:review]['mov_id'])
 
         #VALIDATION BEFORE SAVE
-        if params[:score] != '-'
+        if params[:review]['score'] != '-'
             @ok = 1
             review.save
             @movie.avg_score_cal()
