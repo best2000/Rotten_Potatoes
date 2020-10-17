@@ -1,5 +1,5 @@
-<div>
-  <div><b>Add New Movie</b></div>
+
+  <div class="inner_header"><b>Add New Movie</b></div>
   <div>
     <form accept-charset="UTF-8" action="/movies" data-remote="true" method="post">
       <label>Name:</label>
@@ -23,11 +23,11 @@
         <label>Descriptions:</label>
         <textarea name="movie[des]" rows="7" cols="100"></textarea>
       </div>
-      <a class="btn_link" style="background-color:rgb(255, 176, 148)" href=<%=root_path%>>Cancel</a>
-      <input type="submit" value="Submit" style="background-color:rgb(145, 255, 145)">
+      <a class="btn_link" style="background-color:rgb(255, 176, 148); margin-bottom: 0px;" href=<%=root_path%> >Cancel</a>
+      <input type="submit" value="Submit" style="background-color:rgb(145, 255, 145); margin-bottom: 0px;">
     </form>
   </div>
-</div>
+
 
 <script>
   function disappear_delay(e) {

@@ -1,5 +1,6 @@
-<div>
-  <div style="margin-bottom: 5px;"><b>Movie Info & Management</b></div>
+
+  <div class="inner_header"><b>Movie Info & Management</b></div>
+  <div>
   <a class="btn_link" style="margin-bottom: 7px;" href=<%=root_path%>>Back</a>
   <a class="btn_link" style="margin-bottom: 7px;" href=<%=edit_movie_path(@movie)%>>Edit</a>
   <a class="btn_link" style="margin-bottom: 7px; background-color:rgb(255, 176, 148)" data-method="delete" href="<%= movie_path(@movie) %>">Delete</a>
@@ -24,11 +25,10 @@
   <div class="des_div">
     <b>Descriptions:</b><textarea id="mov_des" rows="7" cols="100" readonly><%= @movie.des %></textarea>
   </div>
-</div>
+  </div>
 
-<div>
-  <div><b>Add Review</b></div>
-  <div style="padding-top: 0px;">
+  <div class="inner_header"><b>Add Review</b></div>
+  <div>
     <form accept-charset="UTF-8" action="/reviews" data-remote="true" method="post">
       <input type="text" name="review[mov_id]" value="<%= @movie.id %>" style="display:none;"/><br>
       <label>User:</label>
@@ -53,11 +53,10 @@
       <input type="submit" value="Submit" style="background-color:rgb(145, 255, 145)">
     </form>
   </div>
-</div>
 
-<div id="review_box">
-  <%= render "reviews/partial/re_box" %>
-</div>
+<div class="inner_header"><b>User Reviews</b></div>
+<%= render "reviews/partial/re_box" %>
+
 
 <script>
   function disappear_delay(e) {

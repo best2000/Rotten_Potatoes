@@ -1,10 +1,9 @@
-<div>
-    <div><b>User Info</b></div>
+    <div class="inner_header"><b>User Info</b></div>
     <div><label>ID:</label> <input type="text" value="<%= @user.id %>" style="width: 18px;" readonly/><br>
         <label>Provider:</label> <input type="text" value="<%= @user.provider %>" readonly/><br>
         <label>Name:</label> <input type="text" value="<%= @user.name %>" readonly/>
     </div>
-    <div><b>My Reviews</b></div>
+    <div class="inner_header"><b>User's Reviews</b></div>
         <% if @reviews.length == 0 %>
             <div>None</div>
         <% else %>
@@ -20,9 +19,8 @@
                     </div>
                     <br><a class="btn_link" href="<%=edit_review_path(re)%>?mov_id=<%= movie.id%>&from=user_index">Edit</a>
                     <a class="btn_link" data-method="delete" href="<%= review_path(re) %>?mov_id=<%= movie.id %>&from=user_index" style="background-color:rgb(255, 176, 148)">Delete</a>
-                </div><br>
+                </div>
             <% end %>
         <% end %>
-</div>
 
 <%= stylesheet_link_tag "form" %>
