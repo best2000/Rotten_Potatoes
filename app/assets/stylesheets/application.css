@@ -207,3 +207,7 @@ div.inner_header {
    background-color: #ffcaca;
 }
 
+div#review_box {
+   padding: 0px;
+   border: 0px;
+}

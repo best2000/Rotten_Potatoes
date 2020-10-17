@@ -1,4 +1,5 @@
 console.log('Hello from reviews/create.js.erb')
+window.scrollTo(0,0);
 if (<%= @ok %> == 0) {
     document.getElementById('alert').innerHTML="Something wrong! Review score is missing.";
     setTimeout(disappear_delay, 3000, "alert")
