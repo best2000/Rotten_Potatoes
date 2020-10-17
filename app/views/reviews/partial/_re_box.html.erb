@@ -1,18 +1,20 @@
-
-<% @movie.reviews.order("created_at DESC").each do |re| %>
-  <div>
-    <p style="margin-bottom: 5px; margin-top: 0px; font-weight: bold;"><%= re.created_at %></p>  
-    <label>User:</label> <input type="text" value="<%= User.find(re.user_id).name %>" readonly/><br>
-    <label>Review score:</label> <input type="text" value="<%= re.score %>" style="width: 18px;" readonly/><br>
-    <div class="des_div" style="border: 0px; padding: 0px; margin-bottom: 5px;">
-    <label>Descriptions:</label> <textarea rows="7" cols="100" readonly><%= re.des %></textarea>
+<% if @movie.reviews.length == 0 %>
+  <div><label>None</label></div>
+<% else %>
+  <% @movie.reviews.order("created_at DESC").each do |re| %>
+      <p style="margin-bottom: 5px; margin-top: 0px; font-weight: bold;"><%= re.created_at %></p>  
+      <label>User:</label> <input type="text" value="<%= User.find(re.user_id).name %>" readonly/><br>
+      <label>Review score:</label> <input type="text" value="<%= re.score %>" style="width: 18px;" readonly/><br>
+      <div class="des_div" style="border: 0px; padding: 0px; margin-bottom: 5px;">
+      <label>Descriptions:</label> <textarea rows="7" cols="100" readonly><%= re.des %></textarea>
+      </div>
+      
+    <% if current_user && re.user_id == current_user.id %>
+      <br><a class="btn_link" href="<%=edit_review_path(re)%>?mov_id=<%= @movie.id %>">Edit</a>
+      <a class="btn_link" data-method="delete" href="<%= review_path(re) %>?mov_id=<%= @movie.id %>" style="background-color:rgb(255, 176, 148)">Delete</a>
+    <% end %>
     </div>
-    
-  <% if current_user && re.user_id == current_user.id %>
-    <br><a class="btn_link" href="<%=edit_review_path(re)%>?mov_id=<%= @movie.id %>">Edit</a>
-    <a class="btn_link" data-method="delete" href="<%= review_path(re) %>?mov_id=<%= @movie.id %>" style="background-color:rgb(255, 176, 148)">Delete</a>
   <% end %>
-  </div>
 <% end %>
 
 <%= stylesheet_link_tag "form" %>
