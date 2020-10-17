@@ -7,7 +7,7 @@
     <label>Descriptions:</label> <textarea rows="7" cols="100" readonly><%= re.des %></textarea>
     </div>
     
-  <% if re.user_id == current_user.id %>
+  <% if current_user && re.user_id == current_user.id %>
     <br><a class="btn_link" href="<%=edit_review_path(re)%>?mov_id=<%= @movie.id %>">Edit</a>
     <a class="btn_link" data-method="delete" href="<%= review_path(re) %>?mov_id=<%= @movie.id %>" style="background-color:rgb(255, 176, 148)">Delete</a>
   <% end %>
