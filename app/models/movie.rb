@@ -14,7 +14,7 @@ class Movie < ApplicationRecord
         self.reviews.each_with_index do |re, i|
             sum += re.score 
         end
-        self.avg_score = sum/self.reviews.length
+        self.avg_score = (sum/self.reviews.length).round(2)
         self.save
     end
 end

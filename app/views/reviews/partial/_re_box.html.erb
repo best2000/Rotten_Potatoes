@@ -1,8 +1,9 @@
 <div><b>User Reviews</b></div>
 <% @movie.reviews.each do |re| %>
   <div>
-  <label>User:</label> <input type="text" value="<%= User.find(re.user_id).name %>" readonly/><br>
-  <label>Review score:</label> <input type="text" value="<%= re.score %>" style="width: 18px;" readonly/><br>
+    <p style="margin-bottom: 5px; margin-top: 0px; font-weight: bold;"><%= re.created_at %></p>  
+    <label>User:</label> <input type="text" value="<%= User.find(re.user_id).name %>" readonly/><br>
+    <label>Review score:</label> <input type="text" value="<%= re.score %>" style="width: 18px;" readonly/><br>
     <div class="des_div" style="border: 0px; padding: 0px; margin-bottom: 5px;">
     <label>Descriptions:</label> <textarea rows="7" cols="100" readonly><%= re.des %></textarea>
     </div>
