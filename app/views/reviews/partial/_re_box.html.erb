@@ -2,6 +2,7 @@
   <div><label>None</label></div>
 <% else %>
   <% @movie.reviews.order("created_at DESC").each do |re| %>
+    <div>
       <p style="margin-bottom: 5px; margin-top: 0px; font-weight: bold;"><%= re.created_at %></p>  
       <label>User:</label> <input type="text" value="<%= User.find(re.user_id).name %>" readonly/><br>
       <label>Review score:</label> <input type="text" value="<%= re.score %>" style="width: 18px;" readonly/><br>
